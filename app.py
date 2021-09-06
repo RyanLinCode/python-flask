@@ -3,6 +3,12 @@ from flask import Flask, render_template
 app = Flask(__name__)  # 建立 Application 物件
 
 
+@app.route("/conditionals-basics/")
+def render_conditionals():
+    company = "Microsoft"
+    return render_template("conditionals_basics.html", company=company)
+
+
 class GalileanMoons:
     def __init__(self, first, second, third, fourth):
         self.first = first
@@ -65,6 +71,3 @@ def hello_world():
 @app.route("/")
 def hello_world_fancy():
     return render_template("test.html")
-
-
-app.run()
