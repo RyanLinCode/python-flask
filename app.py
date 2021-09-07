@@ -3,6 +3,33 @@ from flask import Flask, render_template
 app = Flask(__name__)  # 建立 Application 物件
 
 
+@app.route("/for-loop/conditionals/")
+def render_for_loops_conditionals():
+    user_os = {
+        "Bob Smith": "Windows",
+        "Anne Pun": "MacOS",
+        "Adam Lee": "Linux",
+        "Jose Salvatierra": "Windows",
+    }
+    return render_template("loops_and_conditionals.html", user_os=user_os)
+
+
+@app.route("/for-loop")
+def render_loops_for():
+    planets = [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+    ]
+
+    return render_template("for_loop.html", planets=planets)
+
+
 @app.route("/conditionals-basics/")
 def render_conditionals():
     company = "Microsoft"
